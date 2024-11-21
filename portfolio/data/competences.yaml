@@ -1,10 +1,20 @@
-domaine: 
-  -Réseaux:
-   Gestion de parc: 4 
-   Résolution de tickets: 3
-   Gestion de serveurs: 3
-  -Developpement: 
-   HTML : 2
-   CSS : 2
-   PHP : 1
-   Python : 1 
+domaine:
+  reseaux:
+    - nom: gestion de parc
+    niveau: 4
+    - nom: résolution de tickets
+    niveau: 4
+    - nom: gestion de serveurs
+    niveau: 3
+  
+  developpement:
+    - nom: html
+      niveau: 2
+    - nom: css
+      niveau: 1
+    - nom: php
+      niveau: 1
+    - nom: python
+      niveau: 1
+    - nom: html
+      niveau: 2

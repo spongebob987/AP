@@ -1,6 +1,21 @@
-formation: 
-  filiere: STI2D Option SIN 
-  etablissement: Institut Lemonnier
-  diplome : Bac Technologique
-  resultat : Mention Bien
-  lieu: Caen
+
+
+diplome:
+  - lemonnier:
+    filiere: -STI2D Option SIN 
+    etablissement: Institut Lemonnier
+    formation : Bac Technologique
+    resultat : Mention Bien
+    date debut: "2022 - "
+    date fin: 2024
+    adresse: Rue d'Hérouville, Caen
+    contenu: Sciences techniques de l'industrie et developpement durable
+  - caensup:
+    filiere: -BTS SIO SISR
+    etablissement: CaenSup Sainte-Ursule
+    formation : Brevet Technicien Supérieur
+    adresse: Rue de la miséricorde, Caen
+    date debut: "2024 "
+    date fin: - 2026
+    contenu: Administration réseaux, développement, Cybersécurité
+

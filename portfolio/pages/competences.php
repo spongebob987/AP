@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Mes compétences</title>
-    <link href="../assets/competences.css" rel="stylesheet" />
+    <link href="../assets/stylesheet.css" rel="stylesheet" />
   </head>
   <body>
    
@@ -14,13 +14,17 @@ $data = yaml_parse_file("../data/competences.yaml");
 
 
 
+echo "<nav>";
 echo "<a href='../index.php'>Accueil</a>";
+echo "</nav>";
 
-echo "<h1>Mes compétences</h1>";
 
 
-foreach($data["domaine"] AS $domaine){
-	echo "<p>".ucfirst($domaine["Reseaux"])." : ".$domaine["Gestion de parc"]."</p>\n";
+foreach ($data['domaine'] as $unDomaine => $competences) {
+  echo "<p>".$undomaine["nom"]."</p>";
+  echo "<h3>" . ucfirst($undomaine['nom']) . "</h3>";
+
+
 }
 
 

@@ -1,0 +1,49 @@
+body{
+    color: rgba(31, 31, 31, 0.904);
+    background-color:#7695fcec;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+nav a{
+    
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px;
+    background-color: #f1f1f1; /* couleur de fond */
+    color: rgb(41, 41, 41); /* couleur du texte */
+    text-align: center;
+    text-decoration: none; /* supprime le soulignement */
+    border-radius: 5px; /* coins arrondis */
+    font-size: 16px;
+    transition: background-color 0.3s; /* effet de transition pour un changement de couleur */
+  
+    }
+        
+
+
+
+
+a{
+
+    color: azure;
+}
+
+
+.accueil{
+
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

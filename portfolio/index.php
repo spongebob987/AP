@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Mon portfolio</title>
-    <link href="assets/index.css" rel="stylesheet" />
+    <link href="assets/stylesheet.css" rel="stylesheet" />
   </head>
   <body>
    
