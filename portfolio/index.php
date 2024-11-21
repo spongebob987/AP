@@ -14,14 +14,14 @@ $data = yaml_parse_file("data/index.yaml");
 
 echo "<h1> Bienvenue sur le portfolio de ".$data["prenom"]." ".$data["nom"]." !"."</h1>";
 
-echo "<p> Ma phrase préférée c'est : ".$data["accroche"]."</p>";
 echo "<p>".$data["paragraphe"]."</p>";
+echo "<p> Ma phrase préférée : ".$data["accroche"]."</p>";
 
 echo "<nav>";
 echo "<a href='pages/competences.php'>Mes compétences</a>";
-echo "<a href='pages/contact.php'>Contact</a>";
 echo "<a href='pages/formation.php'>Formation</a>";
 echo "<a href='pages/realisation.php'>Mes réalisations</a>";
+echo "<a href='pages/contact.php'>Contact</a>";
 echo "</nav>";
 
 

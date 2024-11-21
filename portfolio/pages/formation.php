@@ -10,7 +10,8 @@
   <?php
 
 
-
+require_once("../yaml/yaml.php");
+$data = yaml_parse_file("../data/formation.yaml");
 
 
 echo "<a href='../index.php'>Accueil</a>";

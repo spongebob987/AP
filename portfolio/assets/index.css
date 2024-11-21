@@ -1,14 +1,14 @@
 body{
     color: rgb(255, 255, 255);
-    background-color:rgb(41, 41, 41);
+    background-color:rgb(68, 65, 65);
 }
 
 nav a{
-    display:block;
+    
+   display: flexbox;
+    content: center;
+    text-align: center;
     color: azure;
+    padding: 15px;
 }
 
-a{
-
-    color: azure;
-}
