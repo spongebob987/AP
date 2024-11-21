@@ -19,8 +19,6 @@ echo "<a href='../index.php'>Accueil</a>";
 echo "<h1>Mes compétences</h1>";
 
 
-echo "<p>".$data["Gestion de parc"]."</p>";
-
 foreach($data["domaine"] AS $domaine){
 	echo "<p>".ucfirst($domaine["Reseaux"])." : ".$domaine["Gestion de parc"]."</p>\n";
 }
