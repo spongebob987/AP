@@ -9,7 +9,7 @@
    
   <?php
 require_once("../yaml/yaml.php");
-$data = yaml_parse_file("../data/competences.yaml");
+$data = yaml_parse_file("..\data\competences.yaml");
 
 
 
@@ -18,17 +18,17 @@ echo "<nav>";
 echo "<a href='../index.php'>Accueil</a>";
 echo "</nav>";
 
+foreach ($domaine as $domaine_name => $competences): 
+  <h2> echo htmlspecialchars(ucfirst($domaine_name))</h2>; 
+  <ul>
+       foreach ($competences as $competence): 
+          <li>
+               echo htmlspecialchars($competence['nom']);
+               echo htmlspecialchars($competence['niveau']);
+          </li>
+       endforeach; ?>
+  </ul>
 
-
-foreach ($data['domaine'] as $unDomaine => $competences) {
-  echo "<p>".$undomaine["nom"]."</p>";
-  echo "<h3>" . ucfirst($undomaine['nom']) . "</h3>";
-
-
-}
-
-
-?>
 
 </body>
 </html>

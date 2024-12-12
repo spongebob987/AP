@@ -1,11 +1,11 @@
 domaine:
   reseaux:
     - nom: gestion de parc
-    niveau: 4
+      niveau: 4
     - nom: résolution de tickets
-    niveau: 4
+      niveau: 4
     - nom: gestion de serveurs
-    niveau: 3
+      niveau: 3
   
   developpement:
     - nom: html
