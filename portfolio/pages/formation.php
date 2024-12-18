@@ -20,6 +20,7 @@ echo "</nav>";
 
 foreach($data["diplome"] as $undiplome){
   echo "<h1>".$undiplome["filiere"]."</h1>";
+  echo "<p>".$undiplome["option"]."</p>";
   echo "<p>".$undiplome["formation"]."</p>";
   echo "<p>".$undiplome["etablissement"]."</p>";
   echo "<p>".$undiplome["adresse"]."</p>";

@@ -1,20 +1,24 @@
 domaine:
   reseaux:
-    - nom: gestion de parc
+    - nom: Gestion de parc
       niveau: 4
-    - nom: résolution de tickets
+    - nom: Résolution de tickets
       niveau: 4
-    - nom: gestion de serveurs
+    - nom: Gestion de serveurs
       niveau: 3
   
   developpement:
-    - nom: html
+    - nom: HTML
       niveau: 2
-    - nom: css
+    - nom: CSS
       niveau: 1
-    - nom: php
+    - nom: PHP
       niveau: 1
-    - nom: python
+    - nom: PYTHON
       niveau: 1
-    - nom: html
-      niveau: 2
+ 
+  Bureautique:
+    - nom: Microsoft Excel
+      niveau: 4
+    - nom: Microsoft Word
+      niveau: 5

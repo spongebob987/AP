@@ -14,8 +14,6 @@ $data = yaml_parse_file("data/index.yaml");
 
 echo "<h1> Bienvenue sur le portfolio de ".$data["prenom"]." ".$data["nom"]." !"."</h1>";
 
-echo "<p>".$data["paragraphe"]."</p>";
-echo "<p> Ma phrase préférée : ".$data["accroche"]."</p>";
 
 echo "<nav>";
 echo "<a href='pages/competences.php'>Mes compétences</a>";
@@ -25,6 +23,9 @@ echo "<a href='pages/contact.php'>Contact</a>";
 echo "</nav>";
 
 
+echo "<p>".$data["paragraphe"]."</p>";
+echo "<p>J'ai comme objectif à l'issue de cette formation de me former davantage sur les réseaux</p>";
+echo "<p> Ma phrase préférée : ".$data["accroche"]."</p>";
 
 
 
