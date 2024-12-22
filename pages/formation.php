@@ -14,7 +14,7 @@ require_once("../yaml/yaml.php");
 $data = yaml_parse_file("../data/formation.yaml");
 
 
-echo "<nav>";
+echo "<nav class='left'>";
 echo "<a href='../index.php'>Accueil</a>";
 echo "</nav>";
 
@@ -35,7 +35,7 @@ foreach($data["diplome"] as $undiplome){
 
 
 ?>
-<nav>
+<nav class='center'>
 <a href="./../data/cv.png" target="_blank">Visualiser le CV ici</a>
 </nav>
 </body>

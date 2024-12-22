@@ -9,16 +9,17 @@
    
   <?php
 
+
 require_once("../yaml/yaml.php");
-$data = yaml_parse_file("../data/contact.yaml");
+$data = yaml_parse_file("../data/realisation.yaml");
 
-
-
-echo "<nav>";
+echo "<nav class='left'>";
 echo "<a href='../index.php'>Accueil</a>";
 echo "</nav>";
 
-echo "<h1> Page de contact </h1>";
+
+
+
 
 
 

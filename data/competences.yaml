@@ -8,13 +8,13 @@ domaine:
       niveau: 3
   
   developpement:
-    - nom: HTML
+    - nom: Html
       niveau: 2
-    - nom: CSS
+    - nom: Css
       niveau: 1
-    - nom: PHP
+    - nom: Php
       niveau: 1
-    - nom: PYTHON
+    - nom: Python
       niveau: 1
  
   Bureautique:
