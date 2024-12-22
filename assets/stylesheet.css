@@ -1,12 +1,13 @@
 body{
     color: rgb(236, 236, 236);
-    background-color:#5e5d5d;
+    /* background-image: "./../data/fond.jpg"; */ 
     font-family: "Roboto", sans-serif;
     text-align: center;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Ftopography-abstract-black-texture_a2lmZmiUmZqaraWkpJRobWllrWdma2U.jpg&f=1&nofb=1&ipt=b06eb807a1acdaf2de11e22b0ee8ae92aeccef9fc7de503e8f0b800869a9abff&ipo=images);
 }
 
 nav a{
-    
+    font-family: "Roboto", sans-serif;
     display: inline-block;
     padding: 10px 20px;
     margin: 35px;
