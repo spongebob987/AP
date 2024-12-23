@@ -3,23 +3,36 @@ body{
     /* background-image: "./../data/fond.jpg"; */ 
     font-family: "Roboto", sans-serif;
     text-align: center;
-    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Ftopography-abstract-black-texture_a2lmZmiUmZqaraWkpJRobWllrWdma2U.jpg&f=1&nofb=1&ipt=b06eb807a1acdaf2de11e22b0ee8ae92aeccef9fc7de503e8f0b800869a9abff&ipo=images);
+    background-color: #4d4d4d;
+    /*background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Ftopography-abstract-black-texture_a2lmZmiUmZqaraWkpJRobWllrWdma2U.jpg&f=1&nofb=1&ipt=b06eb807a1acdaf2de11e22b0ee8ae92aeccef9fc7de503e8f0b800869a9abff&ipo=images);*/
 }
+
+nav{
+    position: sticky;
+    justify-content: center;
+}
+
+
 
 nav a{
     font-family: "Roboto", sans-serif;
     display: inline-block;
     padding: 10px 20px;
-    margin: 35px;
-    background-color: #2c2c2c; /* couleur de fond */
+    margin: 20px;
+    background-color: #161616; /* couleur de fond */
     color: rgb(228, 228, 228); /* couleur du texte */
-    text-align: center;
     text-decoration: none; /* supprime le soulignement */
     border-radius: 5px; /* coins arrondis */
     font-size: 16px;
     transition: background-color 0.3s; /* effet de transition pour un changement de couleur */
   
     }
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
         
 .center{
     display: inline-block;
@@ -48,7 +61,7 @@ a{
 }
 
 .star {
-    font-size: 20px;
+    font-size: 22px;
     color: #ffd700; /* Couleur dorée */
     }
 
@@ -57,14 +70,59 @@ a{
 }
  
 
-
-
-
 ul{
     list-style-type: none;
 }
 
 
 
+
+img {
+    width : 350px;
+    height : 150px;
+    }
+
+.liens{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+    /*Reset CSS*/
+
+
+nav{
+    width: 100%;
+     
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav li{
+    float: left;
+    width: 18%;
+    text-align: center;/*Centre le texte dans les éléments de menu*/
+}
+
+
+
+nav a{
+    
+    text-decoration: none;
+   
+}
 
 
