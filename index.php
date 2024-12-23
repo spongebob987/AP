@@ -116,6 +116,7 @@ require_once("./yaml/yaml.php");
     echo "<div class='formation-container'>";
 
     foreach ($data["diplome"] as $formation) {
+        
         // Vérifiez si toutes les informations nécessaires sont présentes
         if (!empty($formation["filiere"]) && !empty($formation["etablissement"])) {
             echo "<div class='formation-box'>";
@@ -127,12 +128,13 @@ require_once("./yaml/yaml.php");
             echo "</div>";
         }
     }
-
+    echo "<a href='./data/cv.png'>Télecharger mon CV</a>";
     echo "</div>";
 
 //REALISATIONS
-
-
+?>
+<div id="realisations"></div>
+<?php
 require_once("./yaml/yaml.php");
 $data = yaml_parse_file("./data/realisation.yaml");
 
