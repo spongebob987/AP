@@ -69,7 +69,9 @@ $counter = 0;
 
 // Ouverture de la première boîte
 echo "<div class='competences-box'>";
+?>
 
+<?php
 foreach ($data['domaine'] as $domaine_name => $competences) {
     echo "<h2>" . htmlspecialchars(ucfirst($domaine_name)) . "</h2>";
     echo "<ul>";
