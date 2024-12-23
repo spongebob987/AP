@@ -1,1 +1,10 @@
-site: Exemple d'une réalisation pour un TD :"
+realisations:
+  - titre: "Mentions légales"
+    description: "Page que j'ai créée à l'aide de HTML et CSS."
+    lien: "https://spongebob987.github.io/Bloc1/pages/mentionslegales-2.html"
+    image: "./data/realisation.png"
+
+  - titre: "Pate à crèpe"
+    description: "Page que j'ai créée à l'aide de HTML et CSS."
+    lien: "https://spongebob987.github.io/Bloc1/pages/pateacrepe.html"
+    image: "./data/realisation2.png"

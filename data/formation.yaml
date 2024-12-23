@@ -3,21 +3,31 @@
 diplome:
   - lemonnier:
     filiere: STI2D 
-    option: Option SIN
+    option: SIN
     etablissement: Institut Lemonnier
     formation : Bac Technologique
     resultat : Mention Bien
-    date debut: "2022 - "
+    date debut: "2022  "
     date fin: 2024
     adresse: Rue d'Hérouville, Caen
     contenu: Cette formation est axée sur l'industrie et developpement durable.
+  
   - caensup:
     filiere: BTS SIO 
-    option: Option SISR
+    option: SISR
     etablissement: CaenSup Sainte-Ursule
     formation : Brevet Technicien Supérieur
     adresse: Rue de la miséricorde, Caen
     date debut: "2024 "
-    date fin: - 2026
-    contenu: Cette formation comporte de l'administration réseaux, développement, Cybersécurité.
-
+    date fin:  2026
+    contenu: Cette formation comporte de l'administration réseaux, développement, cybersécurité.
+  
+  - college:
+    filiere: Collège
+    option: Latin 
+    etablissement: Paul Verlaine
+    formation : Brevet
+    adresse: 2 Route de Bougy, Evrecy
+    date debut: "2017 "
+    date fin:  2021
+    contenu: Obtention du Brevet avec mention Bien

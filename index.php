@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Mon portfolio</title>
+    <title>Portfolio Louis Dumont-Derobert</title>
     <link href="assets/stylesheet.css" rel="stylesheet" />
   </head>
   <body>
@@ -14,114 +14,187 @@ require_once("yaml/yaml.php");
 $data = yaml_parse_file("data/index.yaml");
 
 echo "<h1> Bienvenue sur le portfolio de ".$data["prenom"]." ".$data["nom"]." !"."</h1>";
-
-
-echo "<nav class='index'>";
-echo "<ul>";
-echo "<li><a href='#accueil'>Accueil</a></li>";
-echo "<li><a href='#competences'>Mes compétences</a></li>";
-echo "<li><a href='#formation'>Ma formation</a></li>";
-echo "<li><a href='#realisations'>Mes réalisations</a></li>";
-echo "<li><a href='#contact'>Contact</a>";
-echo "</ul>";
-echo "</nav>";
 ?>
+
+<nav class="menu">
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="menu-items">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#competences">Mes compétences</a></li>
+        <li><a href="#formation">Ma formation</a></li>
+        <li><a href="#realisations">Mes réalisations</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 
 <div id='presentation'></div>
 <?php
-//PRESENTATION
+// Charger les données de présentation depuis le fichier YAML
 require_once("./yaml/yaml.php");
 $data = yaml_parse_file("./data/presentation.yaml");
-
-echo "<h1>Présentation</h1>";
-
-
-echo "<p> Je m'appelle ".$data["prenom"]." ".$data["nom"].",";
-
-
-echo "<p>".$data["paragraphe"]."</p>";
-echo "<p> Ma phrase préférée : ".$data["accroche"]."</p>";
-
-echo "<img src='./data/photo.jpg'/>"
 ?>
+
+<!-- Boîte de présentation -->
+<div id="presentation" class="presentation-box">
+    <h1>Présentation</h1>
+    <div class="presentation-content">
+        <div class="presentation-text">
+            <p>Je m'appelle <?php echo htmlspecialchars($data["prenom"]) . " " . htmlspecialchars($data["nom"]); ?>,</p>
+            <p><?php echo nl2br(htmlspecialchars($data["paragraphe"])); ?></p>
+            <p>Ma phrase préférée : <?php echo htmlspecialchars($data["accroche"]); ?></p>
+        </div>
+        <div class="presentation-image">
+            <img src="./data/photo.jpg" alt="Photo de <?php echo htmlspecialchars($data["prenom"]) . " " . htmlspecialchars($data["nom"]); ?>" />
+        </div>
+    </div>
+</div>
 <div id='competences'></div>
 <?php
-//COMPETENCES
-  require_once("./yaml/yaml.php");
+// COMPETENCES
+require_once("./yaml/yaml.php");
 
-  $data = yaml_parse_file("./data/competences.yaml");
-  echo "<h1>Mes Compétences</h1>";
+$data = yaml_parse_file("./data/competences.yaml");
+echo "<h1>Mes Compétences</h1>";
 
-  // Affichage domaines et compétences
-  foreach ($data['domaine'] as $domaine_name => $competences) {
-      echo "<h2>" . htmlspecialchars(ucfirst($domaine_name)) . "</h2>";
-      echo "<ul>";
-      foreach ($competences as $competence) {
-          $niveau = intval($competence['niveau']); // Niveau en entier
-          echo "<li>";
-          echo htmlspecialchars($competence['nom'])." " ;
-          echo "<span class='stars'>";
+// Container principal pour les boîtes
+echo "<div class='competences-container'>";
 
-          // Générer des étoiles pleines
-          for ($i = 1; $i <= $niveau; $i++) {
-              echo "<span class='star'>&#9733;</span>"; // Étoile pleine
-          }
+// Initialisation d'un compteur pour gérer les colonnes
+$counter = 0;
 
-          // Compléter avec des étoiles vides
-          for ($i = $niveau + 1; $i <= 5; $i++) {
-              echo "<span class='star star-empty'>&#9734;</span>"; // Étoile vide
-          }
+// Ouverture de la première boîte
+echo "<div class='competences-box'>";
 
-          echo "</span>";
-          echo "</li>";
-      }
-      echo "</ul>";
-  }
-  ?>
+foreach ($data['domaine'] as $domaine_name => $competences) {
+    echo "<h2>" . htmlspecialchars(ucfirst($domaine_name)) . "</h2>";
+    echo "<ul>";
+    foreach ($competences as $competence) {
+        $niveau = intval($competence['niveau']); // Niveau en entier
+        echo "<li>";
+        echo htmlspecialchars($competence['nom'])." ";
+        echo "<span class='stars'>";
+
+        // Générer des étoiles pleines
+        for ($i = 1; $i <= $niveau; $i++) {
+            echo "<span class='star'>&#9733;</span>"; // Étoile pleine
+        }
+
+        // Compléter avec des étoiles vides
+        for ($i = $niveau + 1; $i <= 5; $i++) {
+            echo "<span class='star star-empty'>&#9734;</span>"; // Étoile vide
+        }
+
+        echo "</span>";
+        echo "</li>";
+    }
+    echo "</ul>";
+
+    $counter++;
+    // Fermer la boîte actuelle et en ouvrir une nouvelle après 3 domaines
+    if ($counter % 3 == 0) {
+        echo "</div><div class='competences-box'>";
+    }
+}
+
+// Fermer la dernière boîte
+echo "</div>";
+
+echo "</div>"; // Fermeture du container principal
+?>
 <div id='formation'></div>
 <?php  //FORMATION
 
-echo "<h1>Ma Formation</h1>";
-
 require_once("./yaml/yaml.php");
-$data = yaml_parse_file("./data/formation.yaml");
+    $data = yaml_parse_file("./data/formation.yaml");
 
-foreach($data["diplome"] as $undiplome){
-  echo "<h2>".$undiplome["filiere"]."</h2>";
-  echo "<p>".$undiplome["option"]."</p>";
-  echo "<p>".$undiplome["formation"]."</p>";
-  echo "<p>".$undiplome["etablissement"]."</p>";
-  echo "<p>".$undiplome["adresse"]."</p>";
-  echo "<p>".$undiplome["date debut"].  $undiplome["date fin"]."</p>";
-  echo "<p>".$undiplome["contenu"]."</p>";
+    echo "<h1>Ma Formation</h1>";
+    echo "<div class='formation-container'>";
 
+    foreach ($data["diplome"] as $formation) {
+        // Vérifiez si toutes les informations nécessaires sont présentes
+        if (!empty($formation["filiere"]) && !empty($formation["etablissement"])) {
+            echo "<div class='formation-box'>";
+            echo "<h2>" . htmlspecialchars($formation["filiere"]) . "</h2>";
+            echo "<p><strong>Option :</strong> " . htmlspecialchars($formation["option"]) . "</p>";
+            echo "<p><strong>Établissement :</strong> " . htmlspecialchars($formation["etablissement"]) . "</p>";
+            echo "<p><strong>Période :</strong> " . htmlspecialchars($formation["date debut"]) . " - " . htmlspecialchars($formation["date fin"]) . "</p>";
+            echo "<p>" . htmlspecialchars($formation["contenu"]) . "</p>";
+            echo "</div>";
+        }
+    }
 
-}
+    echo "</div>";
 
-
-
-
-
-?>
-<nav class='center'>
-<a id href="./data/cv.png" target="_blank">Visualiser le CV ici</a>
-</nav>
-
-<?php
 //REALISATIONS
+
 
 require_once("./yaml/yaml.php");
 $data = yaml_parse_file("./data/realisation.yaml");
-echo "<p>.$data['site']</p>";
 
+echo "<h1>Mes réalisations</h1>";
+
+// Conteneur principal pour les boîtes de réalisations
+echo "<div class='realisation-container'>";
+
+// Parcours des réalisations à partir du fichier YAML
+foreach ($data['realisations'] as $realisation) {
+    // Vérifie si les informations de la réalisation sont présentes
+    if (!empty($realisation["titre"]) && !empty($realisation["description"]) && !empty($realisation["image"]) && !empty($realisation["lien"])) {
+        echo "<div class='realisation-box'>";
+        echo "<h2>" . htmlspecialchars($realisation["titre"]) . "</h2>";
+        echo "<p>" . nl2br(htmlspecialchars($realisation["description"])) . "</p>";
+        echo "<a href='" . htmlspecialchars($realisation["lien"]) . "' target='_blank'>";
+        echo "<img class='realisation-image' src='" . htmlspecialchars($realisation["image"]) . "' alt='" . htmlspecialchars($realisation["titre"]) . "'>";
+        echo "</a>";
+        echo "</div>";
+    }
+}
+
+echo "</div>"; // Fermeture du conteneur principal
 ?>
 
 
-<! FOOTER >
-<a href="https://github.com/spongebob987"><img class=liens src="./data/github.png"></a>
-<a href="https://instagram.com"><img class=liens src="./data/instagram.png"></a>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <a href="https://github.com/spongebob987" target="_blank"><img class="liens" src="./data/github.png" alt="GitHub"></a>
+        <a href="https://instagram.com" target="_blank"><img class="liens" src="./data/instagram.png" alt="Instagram"></a>
+    </div>
+    <div class="footer-copyright">
+        <p>&copy; 2024 Louis Dumont-Derobert. Tous droits réservés.</p>
+    </div>
+</footer>
 
 </body>
 </html>
